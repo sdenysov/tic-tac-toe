@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" type="text/css" rel="stylesheet"/>
+    <link href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="assets/css/styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Gomoku</a>
+        <a class="btn btn-primary" href="login-page.html" role="button">New Game</a>
+    </nav>
+    <div class="row">
+        <div class="col-8">
+            <table id="game-field">
+                <tr>
+                    <td row="1" col="1"></td>
+                    <td row="1" col="2"></td>
+                    <td row="1" col="3"></td>
+                </tr>
+                <tr>
+                    <td row="2" col="1"></td>
+                    <td row="2" col="2"></td>
+                    <td row="2" col="3"></td>
+                </tr>
+                <tr>
+                    <td row="3" col="1"></td>
+                    <td row="3" col="2"></td>
+                    <td row="3" col="3"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-4">
+            <div class="row score-container">
+                <div class="col">
+                    <div id="score-p1" class="player-score">
+                        <div class="player-name">
+                            <i class="ion-ios-close-outline"></i>
+                            <span id="player1-name"></span>
+                        </div>
+                        <div class="score">0</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="score-p2" class="player-score">
+                        <div class="player-name">
+                            <i class="ion-ios-circle-outline"></i>
+                            <span id="player2-name"></span>
+                        </div>
+                        <div class="score">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/js/siteMap.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

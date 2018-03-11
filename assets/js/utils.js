@@ -2,70 +2,85 @@ var gameUtils = (function () {
 
     return {
         findWinnerRow: function (gameField, player) {
-            var rows = gameField.rows;
-            for (var j = 0; j < rows.length; j++) {
-                var count = 0;
-                var cells = rows[j].cells;
-                for (var i = 0; i < cells.length; i++) {
-                    if (cells[i].innerHTML === player.symbol) {
-                        count++;
-                    }
-                }
-                if (count === cells.length) {
-                    return cells;
-                }
-            }
-            return [];
+            var rows = getRows(gameField);
+            return findLineContainsSameSymbols(rows, player.symbol);
         },
         findWinnerCol: function (gameField, player) {
-            var rows = gameField.rows;
-            var size = rows.length;
-            for (var i = 0; i < size; i++) {
-                var count = 0;
-                for (var j = 0; j < size; j++) {
-                    var row = rows[j];
-                    if (row.cells[i].innerHTML === player.symbol) {
-                        count++;
-                    }
-                }
-                if (count === size) {
-                    return row.cells;
-                }
-            }
-            return [];
+            var cols = getCols(gameField);
+            return findLineContainsSameSymbols(cols, player.symbol);
         },
         findWinnerDiagonal: function (gameField, player) {
-            var diagonal = finLeftDiagonal(gameField, player);
-            if (diagonal.length) {
+            var diagonal = findLeftDiagonal(gameField, player);
+            if (everyElementHasTheSameSymbol(diagonal, player.symbol)) {
                 return diagonal;
             }
-            return finRightDiagonal(gameField, player);
+            diagonal = finRightDiagonal(gameField, player);
+            return everyElementHasTheSameSymbol(diagonal, player.symbol) ? diagonal : [];
         }
     };
 
-    function finLeftDiagonal(gameField, player) {
-        var diagonal = [];
-        var rows = gameField.rows;
-        var size = rows.length;
-        for (var i = 0; i < size; i++) {
-            var cell = rows[i].cells[i];
-            if (cell.innerHTML === player.symbol) {
-                diagonal.push(cell);
+    function findLineContainsSameSymbols(array, symbol) {
+        for (var i = 0; i < array.length; i++) {
+            var line = array[i];
+            if (everyElementHasTheSameSymbol(line, symbol)) {
+                return line;
             }
         }
-        return diagonal.length === size ? diagonal : [];
+        return [];
     }
 
-    function finRightDiagonal(gameField, player) {
+    function findLeftDiagonal(gameField) {
         var diagonal = [];
-        var rows = gameField.rows;
-        var size = rows.length;
-        for (var i = 0, j = size - 1; i < size; i++, j--) {
-            var cell = rows[i].cells[j];
-            if (cell.innerHTML === player.symbol) {
-                diagonal.push(cell);
-            }
+        for (var i = 1; i <= gameField.rows.length; i++) {
+            diagonal.push(getCellByCoords(gameField, i, i));
         }
-        return diagonal.length === size ? diagonal : [];
+        return diagonal;
+    }
+
+    function finRightDiagonal(gameField) {
+        var diagonal = [];
+        var size = gameField.rows.length;
+        for (var i = 1, j = size; i <= size; i++, j--) {
+            diagonal.push(getCellByCoords(gameField, i, j));
+        }
+        return diagonal;
+    }
+
+    function getRows(gameField) {
+        var rows = [];
+        var trElements = gameField.rows;
+        for (var i = 0; i < trElements.length; i++) {
+            var row = [];
+            var tdElements = trElements[i].cells;
+            for (var j = 0; j < tdElements.length; j++) {
+                row.push(tdElements[j]);
+            }
+            rows.push(row);
+        }
+        return rows;
+    }
+
+    function getCols(gameField) {
+        var cols = [];
+        var rows = getRows(gameField);
+        for (var i = 0; i < rows.length; i++) {
+            var col = [];
+            for (var j = 0; j < rows.length; j++) {
+                col.push(rows[j][i]);
+            }
+            cols.push(col);
+        }
+        return cols;
+    }
+
+    function everyElementHasTheSameSymbol(array, symbol) {
+        return array.every(function (elem) {
+            return elem.innerHTML === symbol;
+        })
+    }
+
+    function getCellByCoords(gameField, row, col) {
+        var selector = 'td[row="' + row + '"][col="' + col + '"]';
+        return gameField.querySelector(selector);
     }
 })();

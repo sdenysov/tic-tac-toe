@@ -1,0 +1,23 @@
+{
+  "name": "tic-tac-toe",
+  "homepage": "https://github.com/sdenysov/tic-tac-toe",
+  "authors": [
+    "Serhii Denysov <denisovserega1992@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  }
+}

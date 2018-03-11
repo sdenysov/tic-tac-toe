@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand">Gomoku</a>
+    </nav>
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <form id="login-form">
+                <div class="form-group row">
+                    <label for="player-1-name" class="col-sm-2 col-form-label">Player 1:</label>
+                    <div class="col-sm-5">
+                        <input name="player1" type="text" class="form-control" id="player-1-name" placeholder="Player's 1 name">
+                    </div>
+                    <label class="col-sm-1 col-form-label" for="size">Size:</label>
+                    <div class="col-sm-4">
+                        <select name="size" class="form-control" id="size">
+                            <option value="15">15 x 15</option>
+                            <option value="20">20 x 20</option>
+                            <option value="30">30 x 30</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="player-2-name" class="col-sm-2 col-form-label">Player 2:</label>
+                    <div class="col-sm-5">
+                        <input name="player2" type="text" class="form-control" id="player-2-name" placeholder="Player's 2 name">
+                    </div>
+                    <div class="col-sm-5">
+                        <button id="submit-btn" type="submit" class="btn btn-primary btn-block">Start game</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/js/siteMap.js"></script>
+<script src="assets/js/login-script.js"></script>
+</body>
+</html>

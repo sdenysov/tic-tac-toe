@@ -1,42 +1,43 @@
-.clearfix::after {
+.clearfix {
     display: block;
     content: '';
     clear: both;
 }
 
-.game-container {
-    width: 300px;
-    margin: 0 auto;
+.navbar {
+    margin-bottom: 20px;
 }
 
 .score-container .player-score {
     border: 1px solid black;
     border-radius: 5px;
-    margin-bottom: 10px;
 }
 
-.score-container .player-score div {
-    float: left;
-    height: 30px;
-    line-height: 30px;
+.player-name {
+    border-bottom: 1px solid black;
+    padding: 5px;
+    font-size: 25px;
+    text-align: center;
 }
 
 .score-container .score-label {
-    border-right: 1px solid black;
+    border-bottom: 1px solid black;
     background-color: gainsboro;
-    border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
-    width: 40%;
     box-sizing: border-box;
+    padding: 5px;
+    font-size: 25px;
     text-align: center;
 }
 
 .score-container .score {
-    width: 60%;
+    font-size: 60px;
     text-align: center;
 }
 
 #game-field {
+    width: 300px;
+    margin: 0 auto;
     border-collapse: collapse;
 }
 
@@ -49,7 +50,12 @@
 }
 
 #reset-btn {
+    float: right;
     margin-top: 10px;
-    width: 100%;
+    width: 40%;
     height: 40px;
+}
+
+#login-form {
+    padding-top: 20px;
 }
