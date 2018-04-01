@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Mina" rel="stylesheet">
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" type="text/css" rel="stylesheet"/>
     <link href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
     <link href="assets/css/styles.css" type="text/css" rel="stylesheet">
@@ -15,23 +16,7 @@
     </nav>
     <div class="row">
         <div class="col-8">
-            <table id="game-field">
-                <tr>
-                    <td row="1" col="1"></td>
-                    <td row="1" col="2"></td>
-                    <td row="1" col="3"></td>
-                </tr>
-                <tr>
-                    <td row="2" col="1"></td>
-                    <td row="2" col="2"></td>
-                    <td row="2" col="3"></td>
-                </tr>
-                <tr>
-                    <td row="3" col="1"></td>
-                    <td row="3" col="2"></td>
-                    <td row="3" col="3"></td>
-                </tr>
-            </table>
+            <table id="game-field"></table>
         </div>
         <div class="col-4">
             <div class="row score-container">
@@ -57,6 +42,25 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modalDialog" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Final question</h5>
+            </div>
+            <div class="modal-body">
+                <span id="name-label"></span> - you are a winner!<br>
+                <span>Do you want to play again?</span>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-no-btn" type="button" class="btn btn-primary" data-dismiss="modal">NO</button>
+                <button id="modal-yes-btn" type="button" class="btn btn-primary" data-dismiss="modal">YES</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="assets/js/siteMap.js"></script>

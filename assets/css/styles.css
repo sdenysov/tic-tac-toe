@@ -1,3 +1,7 @@
+body {
+    font-family: 'Mina', sans-serif;
+}
+
 .clearfix {
     display: block;
     content: '';
@@ -36,17 +40,17 @@
 }
 
 #game-field {
-    width: 300px;
     margin: 0 auto;
     border-collapse: collapse;
 }
 
 #game-field td {
     border: 1px solid black;
-    width: 100px;
-    height: 100px;
+    width: 23px;
+    height: 23px;
     text-align: center;
-    font-size: 70px;
+    font-size: 13px;
+    font-family: 'Mina', sans-serif;
 }
 
 #reset-btn {
